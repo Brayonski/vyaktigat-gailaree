@@ -6,3 +6,4 @@ import datetime as dt
 def welcome(request):
     return HttpResponse('welcome to snapy snapy')
 
+
