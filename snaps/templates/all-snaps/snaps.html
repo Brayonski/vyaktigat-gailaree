@@ -1,0 +1,72 @@
+{%extends 'all-snaps/base.html'%}
+{% block content %}
+
+<div class="container-fluid">
+    <!-- Looping through snaps -->
+    {% for snaps_item in snaps%}
+    <div class="col-md-3">
+        <div class="image-container">
+            <a class="img-thumbnail" href="{{snaps_item.image}}" data-image-id="{{snaps_item.id}}" data-toggle="modal"
+                data-target="#{{snaps_item.id}}">
+                <img src="{{ snaps_item.image.url }}" alt="Image" id="img{{snaps_item.id}}" class="thesnaps img-responsive"
+                alt="image" style="height:400px; width: 400px;">
+                <h4><span class="badge" style="background-color:#F7509F;">Category: {{ snaps_item.category }}</span></h4>
+                <h4><span class="badge" style="background-color:#3ECBC5;">Location: {{ snaps_item.location }}</span></h4>
+            </a>
+        </div>
+
+        <div class="modal fade " style="background-color:beige;" id="{{snaps_item.id}}">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4><span class="badge" style="background-color:#50CEF7;">By: {{ snaps_item.image_name }}</span></h4>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- {{ snaps_item.image.url }} -->
+                            {% for category in photos.category%}
+                            <h4 class="card-title">{{ snaps_item.category }}</h4>
+                            {% endfor%}
+                        </div>
+                    </div>
+
+                    <img class="card-img-top" src="{{ snaps_item.image.url }}" alt="Card image" style="width:100%; border-radius: 5px;">
+                    <div style="width:100%;" class="card-body">
+                        <h4><span class="badge" style="background-color:#8650F7;">Description :
+                                {{snaps_item.image_description}}</span></h4>
+                        <h4><span class="badge" style="background-color:#F7509F;">Location: {{ snaps_item.location }}</span></h4>
+                        <div>
+                            
+                            
+                            <input type="text" id="link" value="http://127.0.0.1:8000{{ snaps_item.image.url }}" id="{{snaps_item.id}}">
+                            <button class="btn btn-info" onclick="copy({{snaps_item.image.id}})" type="button">Copy</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+
+        <script>
+            function copy() {
+                /* Get the text field */
+                var copyText = document.getElementById("link");
+
+                /* Select the text field */
+                copyText.select();
+
+                /* Copy the text inside the text field */
+                document.execCommand("copy");
+
+                /* Alert the copied text */
+                alert("Copied the text: " + copyText.value);
+            }
+        </script>
+
+    </div>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="static/js/scripts.js"></script>
+
+    {% endfor%}
+    {% endblock %}
