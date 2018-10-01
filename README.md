@@ -21,7 +21,8 @@ Author: [Brian Mutai](https://github.com/brayonski)
 + [x] Images have desciption
 + [x] Categorize pictures
 + [x] search image according to category
-+ [x] view images of different categories
++ [x] filter images by category
++ [x] filter images by location
 
 
 
@@ -75,7 +76,7 @@ python3 manage.py test
 ```bash
 python3 manage.py runserver
 ```
-Open the app on your browser, by default on `127.0.0.1:8000`.
+Open the app on your browser, by default on `127.0.0.1:8000`
 
 ## Live Demo
 
