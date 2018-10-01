@@ -153,7 +153,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-BASE_DIR   =   os.path.join(os.path.abspath(__file__))
 STATIC_ROOT  =   os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
@@ -167,9 +166,6 @@ ALLOWED_HOSTS = ['the-snaps.herokuapp.com']
 #  Add configuration for static files storage using whitenoise
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-import dj_database_url 
-prod_db  =  dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(prod_db)
 
 # Configure Django app for heroku
 django_heroku.settings(locals())
