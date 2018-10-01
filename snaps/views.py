@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse,Http404
 import datetime as dt
-from .models import Image
+from .models import Image,Location,Category
 
 # Create your views here.
 def welcome(request):
@@ -9,7 +9,9 @@ def welcome(request):
 
 def wholegallery(request):
     snaps = Image.objects.all()
-    return render(request, 'all-snaps/snaps.html',{"snaps":snaps})
+    location = Location.objects.all()
+    category = Category.objects.all()
+    return render(request, 'all-snaps/snaps.html',{"snaps":snaps, "location":location, "category":category})
 
 def search_results(request):
     if 'image' in request.GET and request.GET["image"]:
@@ -20,6 +22,20 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'all-snaps/search.html',{"message":message},)
+
+def location_image(request,location_id):
+    image_location = Image.objects.filter(location__location=location_id)
+    location = Location.objects.all()
+    category = Category.objects.all()
+
+    return render(request, 'all-snaps/snaps.html', {"snaps":image_location, "location":location, "category":category})
+
+def category_image(request,category_id):
+    image_category = Image.objects.filter(category__category=category_id)
+    location = Location.objects.all()
+    category = Category.objects.all()
+
+    return render(request, 'all-snaps/snaps.html', {"snaps":image_category, "location":location, "category":category})
 
 def image(request,image_id):
     try:

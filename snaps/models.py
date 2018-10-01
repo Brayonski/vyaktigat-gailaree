@@ -44,7 +44,9 @@ class Image(models.Model):
         return snaps
     
     def filter_by_location(cls,filter_term):
-        snaps = cls.objects.filter(image_icontains=filter_term)
+        snaps = cls.objects.filter(location__location__icontains=filter_term)
+        return snaps
+
 
     
     
