@@ -4,7 +4,7 @@ Gallery
 - - - -
 Author: [Brian Mutai](https://github.com/brayonski)
 ## Description
-[Vyaktigat Gailaree](https://github.com/Brayonski/Gallery) This web app is used to show pictures based on different location of shooting,categories and has photo descriptions. 
+[Vyaktigat Gailaree](https://the-snaps.herokuapp.com/) This web app is used to show pictures based on different location of shooting,categories and has photo descriptions. 
 
 ------------------------------------------------------------------------
 
@@ -51,12 +51,18 @@ pip3 install -r requirements
 The following libraries are required
 
 ```bash
+config==0.4.0
+dj-database-url==0.5.0
 Django==1.11
 django-bootstrap3==11.0.0
+django-heroku==0.3.1
+gunicorn==19.9.0
 Pillow==5.2.0
 psycopg2==2.7.5
 psycopg2-binary==2.7.5
+python-decouple==3.1
 pytz==2018.5
+whitenoise==4.1
 ```
 
 
