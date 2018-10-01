@@ -81,35 +81,35 @@ WSGI_APPLICATION = 'gallery.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 
-if config('MODE')=="dev":
-      DATABASES = {
-      'default': {
-          'ENGINE': 'django.db.backends.postgresql_psycopg2',
-          'NAME': config('DB_NAME'),
-          'USER': config('DB_USER'),
-          'PASSWORD': config('DB_PASSWORD'),
-          'HOST': config('DB_HOST'),
-          'PORT': '',
-    }
-
-  }
-else:
-   DATABASES = {
-       'default': dj_database_url.config(
-           default=config('DATABASE_URL')
-           )
-    }
-
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'gallery',
-#         'USER': 'root',
-#         'PASSWORD': 'mutaikips',
+# if config('MODE')=="dev":
+#       DATABASES = {
+#       'default': {
+#           'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#           'NAME': config('DB_NAME'),
+#           'USER': config('DB_USER'),
+#           'PASSWORD': config('DB_PASSWORD'),
+#           'HOST': config('DB_HOST'),
+#           'PORT': '',
 #     }
-# }
+
+#   }
+# else:
+#    DATABASES = {
+#        'default': dj_database_url.config(
+#            default=config('DATABASE_URL')
+#            )
+#     }
+
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'gallery',
+        'USER': 'root',
+        'PASSWORD': 'mutaikips',
+    }
+}
 
 
 # Password validation
