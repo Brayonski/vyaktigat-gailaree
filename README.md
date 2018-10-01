@@ -4,7 +4,7 @@ Gallery
 - - - -
 Author: [Brian Mutai](https://github.com/brayonski)
 ## Description
-[Pitch](https://github.com/Brayonski/Gallery) This web app is used to show pictures based on different location of shooting,categories and has photo descriptions. 
+[Vyaktigat Gailaree](https://github.com/Brayonski/Gallery) This web app is used to show pictures based on different location of shooting,categories and has photo descriptions. 
 
 ------------------------------------------------------------------------
 
@@ -70,7 +70,7 @@ Open the app on your browser, by default on `127.0.0.1:8000`.
 
 ## Live Demo
 
-The web app can be accessed from the following link
+https://the-snaps.herokuapp.com/
 
 
 ## Quickstart
