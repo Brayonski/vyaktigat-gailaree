@@ -20,8 +20,8 @@ Author: [Brian Mutai](https://github.com/brayonski)
 + [x] show category of an image
 + [x] Images have desciption
 + [x] Categorize pitches
-+ [ ] view images of different categories
-+ [ ] searcg image according to category
++ [x] search image according to category
++ [x] view images of different categories
 
 
 
