@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '(n1x)tpy+psu&0s$$*snvs1l86(s_=%a#6gv7vq-v$j$d2+x)s'
-export DATABASE_URL='postgres://ykzarqgavjuhmu:764482933e9a7368cdd72b9907321af4fa5f17f1a7ffcef9cebb25fc85fe8184@ec2-54-243-147-162.compute-1.amazonaws.com:5432/dfhf0avnc67hpv'
+# export DATABASE_URL='postgres://ykzarqgavjuhmu:764482933e9a7368cdd72b9907321af4fa5f17f1a7ffcef9cebb25fc85fe8184@ec2-54-243-147-162.compute-1.amazonaws.com:5432/dfhf0avnc67hpv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
