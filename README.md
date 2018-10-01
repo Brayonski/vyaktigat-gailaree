@@ -19,7 +19,7 @@ Author: [Brian Mutai](https://github.com/brayonski)
 + [x] List photos of all categories
 + [x] show category of an image
 + [x] Images have desciption
-+ [x] Categorize pitches
++ [x] Categorize pictures
 + [x] search image according to category
 + [x] view images of different categories
 
