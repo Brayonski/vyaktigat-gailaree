@@ -12,11 +12,11 @@ def wholegallery(request):
     return render(request, 'all-snaps/snaps.html',{"snaps":snaps})
 
 def search_results(request):
-    if 'category' in request.GET and request.GET["category"]:
-        search_term = request.GET.get("category")
-        searched_categories = Category.search_by_image(search_term)
+    if 'image' in request.GET and request.GET["image"]:
+        search_term = request.GET.get("image")
+        searched_images = Image.search_by_image(search_term)
         message = f"{search_term}"
-        return render(request, 'all-snaps/search.html', {"message":message, "categories": searched_categories})
+        return render(request, 'all-snaps/search.html', {"message":message, "image": searched_images})
     else:
         message = "You haven't searched for any term"
         return render(request, 'all-snaps/search.html',{"message":message},)

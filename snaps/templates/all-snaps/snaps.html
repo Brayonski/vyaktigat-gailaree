@@ -9,7 +9,7 @@
             <a class="img-thumbnail" href="{{snaps_item.image}}" data-image-id="{{snaps_item.id}}" data-toggle="modal"
                 data-target="#{{snaps_item.id}}">
                 <img src="{{ snaps_item.image.url }}" alt="Image" id="img{{snaps_item.id}}" class="thesnaps img-responsive"
-                alt="image" style="height:400px; width: 400px;">
+                    alt="image" style="height:400px; width: 400px;">
                 <h4><span class="badge" style="background-color:#F7509F;">Category: {{ snaps_item.category }}</span></h4>
                 <h4><span class="badge" style="background-color:#3ECBC5;">Location: {{ snaps_item.location }}</span></h4>
             </a>
@@ -36,10 +36,11 @@
                                 {{snaps_item.image_description}}</span></h4>
                         <h4><span class="badge" style="background-color:#F7509F;">Location: {{ snaps_item.location }}</span></h4>
                         <div>
-                            
-                            
+
+
                             <input type="text" id="link" value="http://127.0.0.1:8000{{ snaps_item.image.url }}" id="{{snaps_item.id}}">
-                            <button class="btn btn-info" onclick="copy({{snaps_item.image.id}})" type="button">Copy</button>
+                            <button type="button" class="btn btn-secondary" onclick="copyToClipboard('img{{snaps_item.id}}')">Copy
+                                Link</button>
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                         </div>
                     </div>
@@ -48,19 +49,17 @@
         </div>
         <!-- </div> -->
 
-        <script>
-            function copy() {
-                /* Get the text field */
-                var copyText = document.getElementById("link");
-
-                /* Select the text field */
-                copyText.select();
-
-                /* Copy the text inside the text field */
+        <script type="text/javascript">
+            function copyToClipboard(idd) {
+                var copyText = document.getElementById(idd);
+                text = copyText.src;
+                var dummy = document.createElement("input");
+                document.body.appendChild(dummy);
+                dummy.setAttribute('value', text);
+                dummy.select();
                 document.execCommand("copy");
-
-                /* Alert the copied text */
-                alert("Copied the text: " + copyText.value);
+                document.body.removeChild(dummy);
+     //alert("Copied the text: " + copyText.src);
             }
         </script>
 

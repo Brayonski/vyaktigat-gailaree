@@ -38,12 +38,13 @@ class Image(models.Model):
     
     def update_image(self):
         self.update()
-    
+    @classmethod
     def search_by_image(cls,search_term):
-        snaps = cls.object.filter(image_icontains=search_term)
+        snaps = cls.objects.filter(category__category__icontains=search_term)
+        return snaps
     
     def filter_by_location(cls,filter_term):
-        snaps = cls.object.filter(image_icontains=filter_term)
+        snaps = cls.objects.filter(image_icontains=filter_term)
 
     
     

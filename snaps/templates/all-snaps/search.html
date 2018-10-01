@@ -1,23 +1,20 @@
 {% extends 'all-snaps/base.html' %}
 {% block content %}
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        {% if categories %}
-        <h2>Found {{ categories.length }} of searched term {{message}}</h2>
+        {% if image %}
+        <h2>Found {{ image|length }} of searched term {{message}}</h2>
         {% else %}
         <h2>Found 0 images for the search term {{message}}</h2>
         {% endif %}
     </div>
 
     <div class="row">
-
-        {% if categories %}
-        {% for image in categories %}
-        <div class="col-sm-6 col-md-3">
-            {{image.image}}
+        {% for img in image %}
+        <div class="col-md-3">
+            <img src="{{ img.image.url }}" class="images img-responsive" alt="Card Image"  style="height:400px; width: 400px";>
         </div>
         {% endfor %}
-        {% endif %}
     </div>
 </div>
 {% endblock %}

@@ -1,15 +1,13 @@
-$(document).ready(function(){
-    function  copyToClipboard() {
-        /* Get the text field */
-        var copyText = document.getElementById("myInput");
-      
-        /* Select the text field */
-        copyText.select();
-      
-        /* Copy the text inside the text field */
+$(document).ready(function () {
+    function copyToClipboard(idd) {
+        var copyText = document.getElementById(idd);
+        text = copyText.src;
+        var dummy = document.createElement("input");
+        document.body.appendChild(dummy);
+        dummy.setAttribute('value', text);
+        dummy.select();
         document.execCommand("copy");
-      
-        /* Alert the copied text */
-        alert("Copied the text: " + copyText.value);
-      }
+        document.body.removeChild(dummy);
+        alert("Copied the text: " + copyText.src);
+    }
 });
