@@ -48,8 +48,9 @@ source virtual/bin/activate
 ```bash
 pip3 install -r requirements
 ```
-```bash
 The following libraries are required
+
+```bash
 Django==1.11
 django-bootstrap3==11.0.0
 Pillow==5.2.0
